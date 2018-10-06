@@ -72,10 +72,10 @@
                    Margin="10,300,0,0"
         ></TextBlock>
         <Label 
-            Height="25"
+            Height="30"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Margin="10, 350, 0, 0"
+            Margin="10, 345, 0, 0"
             >
             Log
         </Label>
@@ -105,6 +105,24 @@
             VerticalAlignment="Top" 
             Width="375"
         />
+        <Menu
+            HorizontalAlignment="Left" 
+            Height="25" 
+            Margin="0,0,0,0" 
+            VerticalAlignment="Top" 
+            Width="400">
+            <MenuItem 
+                Name="MenuFile"
+                Header="_File"
+                AllowDrop="True"
+                Height="25"
+                >
+                <MenuItem
+                    Name="MenuFile_Save"
+                    Header="_Save">
+                </MenuItem>
+            </MenuItem>
+        </Menu>
 
     </Grid>
 </Window>
