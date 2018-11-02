@@ -17,6 +17,7 @@ using Microsoft.Win32;
 
 namespace TimeClock
 {
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -41,6 +42,7 @@ namespace TimeClock
         DateTime breakStop;
         TimeSpan elapsed = new TimeSpan(0);
         List<string> lines = new List<string>();
+        string [] Months = { "", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
 
         private void Clock_In_Click(object sender, RoutedEventArgs e)
         {
@@ -67,7 +69,7 @@ namespace TimeClock
                 Log.Text += lines.Last();
                 Log.ScrollToEnd();
                 string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                File.WriteAllLines(@path + "\\Time Cards\\" + start.Year + "_" + start.Month + "_" + start.Day + "_" + start.Hour + "_" + start.Minute + "_" + start.Second + ".txt", lines);
+                File.WriteAllLines(@path + "\\Time Cards\\" + start.Year + "-" + Months[start.Month] + "-" + start.Day + "_" + start.Hour + "-" + start.Minute + "-" + start.Second + ".txt", lines);
             } else {
                 isClockedIn = true;
                 Break.IsEnabled = true;
